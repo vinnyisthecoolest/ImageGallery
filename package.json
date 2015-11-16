@@ -14,5 +14,12 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vinnyisthecoolest/imagegallery/issues"
+  },
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-session": "^1.12.1",
+    "mongoose": "^4.2.5",
+    "morgan": "^1.6.1"
   }
 }
