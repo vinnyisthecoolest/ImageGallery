@@ -29,6 +29,10 @@ module.exports = function(app, passport) {
     res.render('homepage.ejs', {user: req.user});
   });
 
+  app.get('/upload', isLoggedIn, function(req, res) {
+    res.render('upload.ejs', {message: req.flash('uploadMessage')});
+  });
+
   app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');

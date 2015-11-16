@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+  <title>Upload</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/style.css" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+      <h1><span class="fa fa-upload"></span> Upload</h1>
+
+      <!-- show any messages that come back with authentication -->
+      <!-- <% if (message.length > 0) { %> -->
+      <!--   <div class="alert alert&#45;danger"><%= message %></div> -->
+      <!-- <% } %> -->
+
+      <!-- LOGIN FORM -->
+      <form action="/upload" method="post" enctype="multipart/form-data" name="form1">
+        <div class="form-group">
+          <label>File:</label>
+          <input type="file" class="form-control" name="singleFile" >
+        </div>
+
+        <button type="submit" class="btn btn-warning btn-lg">Upload</button>
+      </form>
+
+      <hr>
+
+      <p>Go <a href="/homepage">home</a>.</p>
+
+    </div>
+
+    </div>
+  </body>
+</html>
