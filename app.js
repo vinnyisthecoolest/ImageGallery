@@ -9,6 +9,15 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
 
+var multer = require('multer'),
+  upload = require('./routes/upload'),
+  http = require('http'),
+  path = require('path');
+
+uploader = multer({
+  dest: 'uploads/'
+});
+
 // Mongo set up
 var configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
@@ -32,6 +41,8 @@ app.set('view engine', 'ejs');
 
 // Routes
 require('./app/routes.js')(app, passport);
+app.post('/upload', uploader.single('singleFile'), upload.s3); //"singleFile" is the field name
+
 
 app.listen(port);
 console.log('Server is up at port: ' + port);
