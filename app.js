@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
-
+var path = require('path');
 var session = require('express-session');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
@@ -16,6 +16,7 @@ require('./config/passport')(passport);
 
 // Middleware
 app.use(morgan('dev'));
+app.use("/public", express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
   secret: 'anystringoftext',
