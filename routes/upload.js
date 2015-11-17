@@ -38,7 +38,7 @@
     function() {
       res.render("result", {
         title: "Upload Result",
-        message: result.error > 0 ? "Something is wroing, Check your server log" : "Success!!",
+        message: result.error > 0 ? "Something is wrong, Check your server log" : "Success!!",
         entitiyIDs: result.uploaded
       });
     });
